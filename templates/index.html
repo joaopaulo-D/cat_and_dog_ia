@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IA</title>
+  <body>
+    <div>
+      <form action="" method="POST" enctype=multipart/form-data>
+        <input type="file" name="file">
+        <input type="submit" value="enviar">
+      </form>
+    </div>
+    <hr>
+    {% if not_imagem == True %}
+      <div>
+          <div>
+            <div>
+              <h3>Resultado</h3>
+            </div>
+              <div>
+                <table>
+                    <tr>
+                      <th>Input</th>
+                      <th>Output</th>
+                    </tr>
+                    <tr>
+                        <th> 
+                            <img width="224" height="224" style="border-radius: 50%;" src="../uploads/{{ img }}" />
+                        </th>
+                        <td> 
+                          <span style="color: rgb(19, 189, 56);">Animal: {{ label }}%</span>
+                          <span> Precisão: {{ accuracy }}</span>
+                        </td>
+                      </tr>
+                </table> 
+            </div>
+        </div>
+      {% else %}
+        <span style="color: red;">Nada de dados :(</span>
+      {% endif %}
+  </body>
